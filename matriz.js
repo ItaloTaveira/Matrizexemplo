@@ -2,9 +2,9 @@ const prompt = require('prompt-sync')();
 let matriz = []
 for(let i = 0; i < 4; i++){
     matriz[i] = [] //cria um vetor de vetores
-    console.log(`Informe os elementos da linha ${i}`)
+    console.log(`Informe os elementos da linha:  ${i}`)
     for(let j = 0; j < 4; j++){
-        matriz[i][j] = prompt(`Informe uma letra da coluna ${j}`)
+        matriz[i][j] = prompt(`Informe uma letra da coluna:  ${j}`)
     }
 }
 console.log(matriz)
@@ -35,3 +35,9 @@ console.log('elementos da coluna 2')
 for(let i=0;i<4;i++){
     console.log(matriz[i][2])
 }
+
+//Usando o map para matriz
+matriz.map((linha, i) => {
+    console.log(`elementos da linha ${i}`)
+    linha.map((elemento, j) => console.log (`Coluna ${j} - ${elemento}`))
+} )
